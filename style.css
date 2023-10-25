@@ -1,0 +1,39 @@
+.product-item {
+    width: 200px;
+    min-height: 250px;
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+    /* Đặt khung .product-item là relative để .image-2 nằm trong khung */
+    overflow: hidden;
+}
+
+.image-1 {
+    max-width: 100%;
+    transition: all 0.5s ease;
+    height: auto;
+}
+
+.image-2 {
+    max-width: 100%;
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translate3d(100%, 0, 0);
+    transition: all 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.product-item:hover .image-1 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.product-item:hover .image-2 {
+    opacity: 1;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+    /* Đặt lại vị trí của image-2 */
+}
